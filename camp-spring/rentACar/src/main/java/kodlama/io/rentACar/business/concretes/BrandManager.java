@@ -26,4 +26,5 @@ public class BrandManager implements BrandService {
         //iş kuralları
         return brandRepository.getAll();
     }
+
 }

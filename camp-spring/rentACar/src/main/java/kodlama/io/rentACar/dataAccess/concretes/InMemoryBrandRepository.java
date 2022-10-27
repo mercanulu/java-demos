@@ -10,7 +10,9 @@ import java.util.List;
 
 @Repository//Bu sınıf bir dataAccess nesnesidir.
 public class InMemoryBrandRepository implements BrandRepository {
-    List<Brand> brands;//içinde brandlerin olduğu koleksiyon listesi oluşturulur
+
+    //içinde brandlerin olduğu koleksiyon listesi oluşturulur
+    List<Brand> brands;
 
     public InMemoryBrandRepository() {
         brands = new ArrayList<Brand>();//oluşturulan liste boş bir array döndürür
