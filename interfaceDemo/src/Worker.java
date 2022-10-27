@@ -7,7 +7,7 @@ public class Worker implements IWorkable,IEatable, IPayable{
 
     @Override
     public void eat() {
-        System.out.println("Çalışan yemeği verildi");
+        System.out.println("Çalışanın yemek hakkı vardır.");
     }
 
     @Override

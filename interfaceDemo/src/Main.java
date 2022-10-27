@@ -11,5 +11,8 @@ public class Main {
         worker.work();
         worker.eat();
         worker.salary();
+
+        OutsourceWorker outsourceWorker = new OutsourceWorker();
+        outsourceWorker.work();
     }
 }

@@ -1,6 +1,6 @@
 public class OutsourceWorker implements IWorkable{
     @Override
     public void work() {
-        System.out.println("Çalışan bilgisi getirildi");
+        System.out.println("Dışardan temin edilen çalışan bilgisi getirildi");
     }
 }
