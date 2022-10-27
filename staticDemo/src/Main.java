@@ -8,6 +8,5 @@ public class Main {
 
         //inner class
         DatabaseHelper.Connection.createConnection();
-
     }
 }

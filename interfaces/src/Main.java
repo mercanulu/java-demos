@@ -4,6 +4,7 @@ public class Main {
         CustomerManager customerManager = new CustomerManager(new SqlServerManager());
         customerManager.add();
 
+
         //design pattern 2
         customerManager.repository = new SqlServerManager();
         customerManager.save();

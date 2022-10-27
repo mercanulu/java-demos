@@ -8,4 +8,5 @@ public class OracleCustomerDal implements ICustomerDal, IRepository{
     public void save() {
         System.out.println("Oracle kaydedildi");
     }
+
 }

@@ -9,4 +9,5 @@ public class CustomerManager {
         this.baseLogger.log("log message");
 
     }
+
 }

@@ -12,7 +12,6 @@ public class DatabaseHelper {
     }
     public static class Connection{
         public static void createConnection(){
-
         }
 
     }

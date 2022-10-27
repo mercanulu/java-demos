@@ -4,7 +4,6 @@
 * Banka kendi personeline yemek verip ve ödeme yaparken dışardan gelene bunları sağlamıyor.
 *
 */
-
 public class Main {
     public static void main(String[] args){
         Worker worker = new Worker();

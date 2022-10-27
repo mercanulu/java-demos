@@ -8,4 +8,5 @@ public class SqlServerManager implements ICustomerDal, IRepository{
     public void save() {
         System.out.println("Sql server kaydedildi.");
     }
+
 }

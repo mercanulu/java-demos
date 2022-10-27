@@ -5,6 +5,7 @@ public class Main {
         * Abstract class'ların referansları new' lenebilir.
         *
         */
+
         GameCalculator gameCalculator = new KidsGameCalculator();
         gameCalculator.hesapla();
         gameCalculator.gameOver();

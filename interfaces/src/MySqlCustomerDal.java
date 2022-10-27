@@ -8,4 +8,5 @@ public class MySqlCustomerDal implements ICustomerDal, IRepository{
     public void save() {
         System.out.println("My sql kaydedildi.");
     }
+
 }
