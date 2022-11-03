@@ -25,44 +25,37 @@ public class ProgrammingLanguageManager implements ProgrammingLanguageService {
     }
 
     @Override
-    public ProgrammingLanguage getById(ProgrammingLanguage programmingLanguage) {
-        return programmingLanguageRepository.getById(programmingLanguage);
+    public ProgrammingLanguage getById(int id) throws Exception {
+        return programmingLanguageRepository.getById(id);
 
     }
 
 
     @Override
     public void add(ProgrammingLanguage programmingLanguage) throws Exception {
-        List<ProgrammingLanguage> languages = programmingLanguageRepository.getAll();
-
-        for (ProgrammingLanguage language : languages) {
-            if (language.getId()==programmingLanguage.getId() || language.getName().equals("")) {
-                throw new Exception("Aynı isimde bilgi girdiniz veya bilgi girmediniz");
-            }
-
+        if(programmingLanguage.getName().isEmpty()){
+            throw new Exception("Programlama dili boş geçilemez.");
         }
+        for(ProgrammingLanguage language:getAll()){
+            if(programmingLanguage.getId() ==language.getId() || programmingLanguage.getName().equals(language.getName())){
+                throw new Exception("Programlama dili tekrar edemez");
+            }
+        }
+
         programmingLanguageRepository.add(programmingLanguage);
 
     }
 
     @Override
-    public void delete(int id) {
-        if(isValidId(programmingLanguage.getId())){
-            programmingLanguageRepository.delete(programmingLanguage.getId());
-        }
+    public void delete(int id) throws Exception {
+      programmingLanguageRepository.delete(id);
 
     }
 
     @Override
-    public void update(ProgrammingLanguage programmingLanguage) {
+    public void update(ProgrammingLanguage programmingLanguage) throws Exception {
+        programmingLanguageRepository.update(programmingLanguage);
 
     }
-    public boolean isValidId(int id){
-        for(ProgrammingLanguage language:getAll()){
-            if(language.getId()==programmingLanguage.getId()){
-                return true;
-            }
-        }
-        return false;
-    }
+
 }

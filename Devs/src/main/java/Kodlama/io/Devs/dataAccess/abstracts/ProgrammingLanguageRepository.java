@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface ProgrammingLanguageRepository {
     List<ProgrammingLanguage> getAll();
-    ProgrammingLanguage getById(ProgrammingLanguage programmingLanguage);
+    ProgrammingLanguage getById(int id) throws Exception;
     void add(ProgrammingLanguage programmingLanguage);
-    void delete(int id);
-    void update(ProgrammingLanguage programmingLanguage);
+    void delete(int id) throws Exception;
+    void update(ProgrammingLanguage programmingLanguage) throws Exception;
 
 }

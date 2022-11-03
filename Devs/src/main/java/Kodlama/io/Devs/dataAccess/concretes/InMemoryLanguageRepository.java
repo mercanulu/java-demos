@@ -29,14 +29,14 @@ public class InMemoryLanguageRepository implements ProgrammingLanguageRepository
     }
 
     @Override
-    public ProgrammingLanguage getById(ProgrammingLanguage programmingLanguage) {
+    public ProgrammingLanguage getById(int id) throws Exception {
         for(ProgrammingLanguage language:languages){
-            if(language.getId()==programmingLanguage.getId()){
+            if(language.getId()==id){
                 return language;
             }
         }
 
-        return null;
+        throw new Exception("Programlama dili bulunamadı!");
 
     }
 
@@ -48,14 +48,19 @@ public class InMemoryLanguageRepository implements ProgrammingLanguageRepository
     }
 
     @Override
-    public void delete(int id) {
-
-        languages.remove(id);
+    public void delete(int id) throws Exception {
+        ProgrammingLanguage language = getById(id);
+        languages.remove(language);
     }
 
     @Override
-    public void update(ProgrammingLanguage programmingLanguage) {
-
+    public void update(ProgrammingLanguage programmingLanguage) throws Exception {
+        for(ProgrammingLanguage language:getAll()) {
+            if(language.getId()==programmingLanguage.getId()) {
+                language.setId(programmingLanguage.getId());
+                language.setName(programmingLanguage.getName());
+            }
+        }
     }
 
 }
