@@ -54,13 +54,15 @@ public class InMemoryLanguageRepository implements ProgrammingLanguageRepository
     }
 
     @Override
-    public void update(ProgrammingLanguage programmingLanguage) throws Exception {
+    public void update(ProgrammingLanguage programmingLanguage)  {
         for(ProgrammingLanguage language:getAll()) {
             if(language.getId()==programmingLanguage.getId()) {
                 language.setId(programmingLanguage.getId());
                 language.setName(programmingLanguage.getName());
             }
+
         }
+
     }
 
 }
